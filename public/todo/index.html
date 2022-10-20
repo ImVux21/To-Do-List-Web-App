@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./todo.css" />
+    <title>Frontend Mentor | Todo app</title>
+  </head>
+
+  <body class="light-theme">
+    <div class="bg">
+      <main>
+        <div id="todoApp">
+          <div id="one-c">
+            <h1 id="header">TODO</h1>
+            <div class="user-infor">
+              <p class="user-name"></p>
+              <a href="../login/login.html" class="icons"></a>
+            </div>
+          </div>
+          <div id="two-c">
+            <button class="btn" id="add" aria-label="btn"></button>
+
+            <input
+              type="text"
+              placeholder="Create a new todo and press enter ..."
+              id="task-i"
+            />
+          </div>
+
+          <div class="notification">
+            <div class="form-alert"></div>
+          </div>
+
+          <div id="three-c">
+            <!-- <div class="output-d">
+              <div id="btn-div">
+                <button class="btn-ok" id="icons"></button>
+              </div>
+            
+              <p class="output-i"> ${taskValue} </p>
+              <div id="delete">
+                <svg xmlns="http://www.w3.org/2000/svg" class="delete-btn" id width="18" height="18">
+                  <path fill="#494C6B" fill-rule="evenodd"
+                    d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z" />
+                </svg>
+              </div>
+            </div> -->
+          </div>
+          <div id="four-c">
+            <span id="text-l"></span>
+            <div class="options">
+              <button class="optn-btn active" id="all">All</button>
+              <button class="optn-btn" id="active">Active</button>
+              <button class="optn-btn" id="completed">Completed</button>
+            </div>
+
+            <button id="delete-all" class="optn-btn">Clear Completed</button>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

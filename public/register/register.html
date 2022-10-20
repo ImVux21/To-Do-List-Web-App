@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>To-do Web-App</title>
+
+    <link rel="stylesheet" href="../login.css" />
+  </head>
+  <body>
+    <main class="container">
+      <div class="titleside">
+        <h1>Learn to code by watching others</h1>
+        <p>
+          See how experienced developers solve problems in real-time. Watching
+          scripted tutorials is great, but understanding how developers think is
+          invaluable.
+        </p>
+      </div>
+      <div class="formside">
+        <div class="header">
+          <h2>Task Manager</h2>
+          <p>for free.</p>
+        </div>
+
+        <form action="#" class="form" id="form">
+          <input
+            type="text"
+            name="username"
+            id="username"
+            class="inputdata"
+            placeholder="User name" 
+          />
+          <p class="errormessage" id="errorUsername"></p>
+
+          <input
+            type="text"
+            name="email"
+            id="email"
+            class="inputdata"
+            placeholder="Email Address"
+          />
+          <p class="errormessage" id="errorEmail"></p>
+
+          <input
+            type="password"
+            name="password"
+            id="password"
+            class="inputdata"
+            placeholder="Password"
+          />
+          <p class="errormessage" id="errorPassword"></p>
+
+          <input
+            type="button"
+            class="inputbutton register"
+            id="buttonForm"
+            value="Register"
+          />
+          
+          <a
+            href="../login/login.html"
+            class="inputbutton login"
+            id="buttonForm"
+            
+          >Login</a>
+
+          <small class="text"
+            >By clicking the button, you are agreeing to our
+            <span>Terms and Services</span>
+          </small>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="https://github.com/ImVux21">Vux.</a>.
+      </p>
+    </footer>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./register.js"></script>
+  </body>
+</html>
