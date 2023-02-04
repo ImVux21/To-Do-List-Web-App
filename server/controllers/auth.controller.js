@@ -23,13 +23,13 @@ const checkAuthentication = asyncWrapper(async (req, res, next) => {
     const cookieOptions = {
         path: "/",
         httpOnly: true,
-        sameSite: "none",
-        secure: true,
+        sameSite: "none", 
         maxAge: 24 * 60 * 60 * 1000
     }
 
-    res.status(200)
+    res
     .cookie('token', token, cookieOptions)
+    .status(200)
     .json({ user: { id: user._id, name: user.name }, token});
 });
 

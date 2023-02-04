@@ -10,14 +10,12 @@ const login = () => {
         const email = emailInputDOM.value;
         const password = passwordInputDOM.value;
 
+        axios.defaults.withCredentials = true;
         try {
             await axios.post('http://localhost:3000/api/login', {
                 email, password
             }, {
                 withCredentials: true,
-                headers: {
-                    "Content-Type": "application/json",                
-                }
             });
             
             emailInputDOM.value = '';
@@ -25,13 +23,7 @@ const login = () => {
 
             alert("Login Successfully!");
             errorMessageDOM.forEach(e => e.textContent = '');
-
-            // await axios.get('http://localhost:3000/api/users/me', {
-            //     withCredentials: true,
-            //     headers: {
-            //         "Content-Type": "application/json",                
-            //     }
-            // });
+            
             window.location.replace('../todo/index.html');
         } catch (error) {
             const message = error.response.data.msg;

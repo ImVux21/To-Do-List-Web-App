@@ -1,7 +1,7 @@
 {
   "main": "./server/app.js",
   "scripts": {
-    "start": "nodemon ./server/app.js"
+    "start": "nodemon --inspect ./server/app.js"
   },
   "proxy": "http://localhost:3000",
   "dependencies": {

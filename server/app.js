@@ -12,13 +12,12 @@ const userRoute = require('./routes/user.route');
 const errorHandler = require('./errors/error-handler');
 
 app.use(cors({
-    origin: true,
     credentials: true,
     origin: 'http://127.0.0.1:5500'
 }));
 app.use(cookieParser());
 
-app.use(express.static('./public/login'));
+app.use(express.static('./public'));
 app.use(express.json());
 
 app.use('/api/to-do', taskRoute);
