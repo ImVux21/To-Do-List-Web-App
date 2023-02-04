@@ -252,12 +252,13 @@ const app = {
 
   auth() {
     window.onload = async () => {
+      axios.defaults.withCredentials = true;
       const { data: { user } } = await axios.get('http://localhost:3000/api/users/me', {
-        withCredentials: true,
         headers: {
           "Content-Type": "application/json",                
         }
       });
+      
       this.userId = user.id;
       document.querySelector('.user-name').textContent = user.name;
 

@@ -5,6 +5,7 @@ const { createCustomError } = require('../errors/custom-error');
 
 const verifyToken = (req, res, next) => {
     const  { token } = req.cookies;
+    console.log(token);
     if (!token) return next(createCustomError('Access denied. No token provided.', 401));
 
     try {

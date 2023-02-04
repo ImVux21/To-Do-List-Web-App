@@ -1,4 +1,4 @@
-const { User, validateUser } = require('../models/user.model');
+const { User, validateUser, userSchema } = require('../models/user.model');
 const asyncWrapper = require('../middlewares/async');
 const { createCustomError } = require('../errors/custom-error');
 
@@ -24,11 +24,20 @@ const register = asyncWrapper(async (req, res, next) => {
 
     const salt = await bcrypt.genSalt(10);
     user.password = await bcrypt.hash(user.password, salt);
-
+    const token = user.generateAuthToken();
     await user.save();
 
-    res.status(200)
-    .json({ task: { id: user._id, name: user.name }, token });
+    const cookieOptions = {
+        credentials: true,
+        path: "/",
+        secure: true,
+        httpOnly: true,
+        sameSite: "none", 
+        maxAge: 24 * 60 * 60 * 1000
+    }
+
+    res
+    .cookie('token', token, cookieOptions).status(200).json({ task: { id: user._id, name: user.name }, token });
 });
 
 module.exports = { getUser, register }

@@ -14,6 +14,7 @@ const register = () => {
         const password = passwordInputDOM.value;
 
         try {
+            axios.defaults.withCredentials = true;
             await axios.post('http://localhost:3000/api/users', {
                 name, email, password
             });
@@ -24,7 +25,7 @@ const register = () => {
             alert("Registered Successfully!");
 
             errorMessageDOM.forEach(e => e.textContent = '');
-            window.location.replace('../login/login.html');       
+            window.location.replace('../todo/index.html');       
         } catch (error) {
             const message = error.response.data.msg;
             if (message.includes('password')) {

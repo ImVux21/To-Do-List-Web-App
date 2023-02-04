@@ -10,17 +10,15 @@ const login = () => {
         const email = emailInputDOM.value;
         const password = passwordInputDOM.value;
 
-        axios.defaults.withCredentials = true;
         try {
+            axios.defaults.withCredentials = true;
             await axios.post('http://localhost:3000/api/login', {
                 email, password
-            }, {
-                withCredentials: true,
             });
             
             emailInputDOM.value = '';
             passwordInputDOM.value = '';
-
+            
             alert("Login Successfully!");
             errorMessageDOM.forEach(e => e.textContent = '');
             

@@ -21,7 +21,9 @@ const checkAuthentication = asyncWrapper(async (req, res, next) => {
     const token = user.generateAuthToken();
 
     const cookieOptions = {
+        credentials: true,
         path: "/",
+        secure: true,
         httpOnly: true,
         sameSite: "none", 
         maxAge: 24 * 60 * 60 * 1000
